@@ -62,6 +62,8 @@ class Recipe extends Sequelize.Model {
       through: 'recipes_tags',
       foreignKey: 'recipeId',
     });
+
+    this.hasMany(models.PreparationStep);
   }
 }
 

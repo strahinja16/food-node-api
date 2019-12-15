@@ -3,11 +3,13 @@ const sequelize = require('../services/db');
 const UserModel = require('./user');
 const RecipeModel = require('./recipe');
 const TagModel = require('./tag');
+const PreparationStepModel = require('./preparationStep');
 
 const models = {
   User: UserModel.init(sequelize, Sequelize),
   Recipe: RecipeModel.init(sequelize, Sequelize),
   Tag: TagModel.init(sequelize, Sequelize),
+  PreparationStep: PreparationStepModel.init(sequelize, Sequelize),
 };
 
 Object.values(models)
