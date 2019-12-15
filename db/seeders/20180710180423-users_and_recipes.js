@@ -77,7 +77,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('users', userData, {});
     await queryInterface.bulkInsert('recipes', recipeData, {});
-    return queryInterface.bulkInsert('users_likedRecipes', usersRecipes, {});
+    await queryInterface.bulkInsert('users_likedRecipes', usersRecipes, {});
   },
 
   down: async (queryInterface) => {

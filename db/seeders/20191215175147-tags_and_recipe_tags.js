@@ -40,7 +40,7 @@ module.exports = {
     });
 
     await queryInterface.bulkInsert('tags', tagData, {});
-    return queryInterface.bulkInsert('recipes_tags', tagsRecipesData, {});
+    await queryInterface.bulkInsert('recipes_tags', tagsRecipesData, {});
   },
 
   down: async (queryInterface) => {

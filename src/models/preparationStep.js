@@ -29,6 +29,12 @@ class PreparationStep extends Sequelize.Model {
       as: 'recipe',
       foreignKey: 'recipeId',
     });
+
+    this.belongsToMany(models.Ingredient, {
+      as: 'preparationSteps',
+      through: 'preparationSteps_ingredients',
+      foreignKey: 'preparationStepId',
+    });
   }
 }
 
