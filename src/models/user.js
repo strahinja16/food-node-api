@@ -31,6 +31,16 @@ class User extends Sequelize.Model {
       tableName: 'users',
     });
   }
+
+  static associate(models) {
+    this.hasMany(models.Recipe);
+
+    this.belongsToMany(models.User, {
+      as: 'users',
+      through: 'users_likedRecipes',
+      foreignKey: 'userId',
+    });
+  }
 }
 
 module.exports = User;

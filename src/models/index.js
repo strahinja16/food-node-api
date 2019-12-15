@@ -1,9 +1,11 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../services/db');
 const UserModel = require('./user');
+const RecipeModel = require('./recipe');
 
 const models = {
   User: UserModel.init(sequelize, Sequelize),
+  Recipe: RecipeModel.init(sequelize, Sequelize),
 };
 
 Object.values(models)
