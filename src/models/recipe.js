@@ -56,6 +56,12 @@ class Recipe extends Sequelize.Model {
       through: 'users_likedRecipes',
       foreignKey: 'likedRecipeId',
     });
+
+    this.belongsToMany(models.Tag, {
+      as: 'recipes',
+      through: 'recipes_tags',
+      foreignKey: 'recipeId',
+    });
   }
 }
 
