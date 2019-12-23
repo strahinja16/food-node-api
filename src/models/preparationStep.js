@@ -27,11 +27,11 @@ class PreparationStep extends Sequelize.Model {
   static associate(models) {
     this.belongsTo(models.Recipe, {
       as: 'recipe',
-      foreignKey: 'recipeId',
+      foreignKey: 'RecipeId',
     });
 
     this.belongsToMany(models.Ingredient, {
-      as: 'preparationSteps',
+      as: 'ingredients',
       through: 'preparationSteps_ingredients',
       foreignKey: 'preparationStepId',
     });

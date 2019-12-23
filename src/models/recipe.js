@@ -49,16 +49,16 @@ class Recipe extends Sequelize.Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { as: 'user', foreignKey: 'userId' });
+    this.belongsTo(models.User, { as: 'user', foreignKey: 'UserId' });
 
     this.belongsToMany(models.User, {
-      as: 'likedRecipes',
+      as: 'likedUsers',
       through: 'users_likedRecipes',
       foreignKey: 'likedRecipeId',
     });
 
     this.belongsToMany(models.Tag, {
-      as: 'recipes',
+      as: 'tags',
       through: 'recipes_tags',
       foreignKey: 'recipeId',
     });

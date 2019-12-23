@@ -22,7 +22,7 @@ class Tag extends Sequelize.Model {
 
   static associate(models) {
     this.belongsToMany(models.Recipe, {
-      as: 'tags',
+      as: 'recipes',
       through: 'recipes_tags',
       foreignKey: 'tagId',
     });

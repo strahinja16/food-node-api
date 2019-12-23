@@ -26,7 +26,7 @@ class Ingredient extends Sequelize.Model {
 
   static associate(models) {
     this.belongsToMany(models.PreparationStep, {
-      as: 'ingredients',
+      as: 'preparationSteps',
       through: 'preparationSteps_ingredients',
       foreignKey: 'ingredientId',
     });

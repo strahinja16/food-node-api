@@ -15,7 +15,7 @@ module.exports = {
       for (let i = 0; i < 5; i++) {
         preparationStepData.push({
           id: uuid(),
-          recipeId: recipe.id,
+          RecipeId: recipe.id,
           orderNum: i + 1,
           preparation: faker.lorem.sentences(3),
           createdAt: new Date(),

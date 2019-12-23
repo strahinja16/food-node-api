@@ -18,7 +18,7 @@ const sequelize = new Sequelize(database, user, password, {
   },
 
   // eslint-disable-next-line no-console
-  logging: process.env.NODE_ENV === 'development' ? console.info : false,
+  logging: process.env.NODE_ENV === 'development' ? console.log : false,
 
   define: {
     underscored: false,

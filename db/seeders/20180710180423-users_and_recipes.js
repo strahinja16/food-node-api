@@ -24,7 +24,7 @@ module.exports = {
     for (let i = 0; i < 5; i++) {
       recipeData.push({
         id: uuid(),
-        userId: userData[0].id,
+        UserId: userData[0].id,
         title: faker.name.title(),
         image: faker.image.image(),
         prepTime: faker.random.number({ min: 2, max: 60 }),
@@ -41,7 +41,7 @@ module.exports = {
     for (let i = 0; i < 5; i++) {
       recipeData.push({
         id: uuid(),
-        userId: userData[1].id,
+        UserId: userData[1].id,
         title: faker.name.title(),
         image: faker.image.image(),
         prepTime: faker.random.number({ min: 2, max: 60 }),
