@@ -2,11 +2,27 @@ const { Router } = require('express');
 const middleware = require('../../middleware');
 const validate = require('../../middleware/validate');
 const likeDislikeRecipeRequest = require('../../requests/recipes/likeDislikeRecipe');
+const recipeSearchRequest = require('../../requests/recipes/recipeSearch');
+const recipeRepository = require('../../repositories/recipe');
 const {
   Recipe, Tag, PreparationStep, Ingredient, User,
 } = require('../../models');
 
 const router = Router();
+
+router.post('/search',
+  middleware('auth'),
+  validate(recipeSearchRequest),
+  async (req, res) => {
+    try {
+      const recipes = await recipeRepository.getRecipesByQuery(req.body);
+
+      return res.status(200).send({ recipes });
+    } catch (e) {
+      console.error(e);
+      return res.status(500).send({ message: 'Internal server error.' });
+    }
+  });
 
 router.get('/:id/detailed', middleware('auth'), async (req, res) => {
   try {
