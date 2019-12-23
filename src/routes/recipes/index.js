@@ -117,4 +117,15 @@ router.post('/:id/dislike',
     }
   });
 
+router.get('/', async (req, res) => {
+  try {
+    const recipes = await Recipe.findAll().filter(r => r.prepTime % 3 === 0);
+
+    return res.status(200).send({ recipes });
+  } catch (e) {
+    console.error(e);
+    return res.status(500).send({ message: 'Internal server error.' });
+  }
+});
+
 module.exports = router;
