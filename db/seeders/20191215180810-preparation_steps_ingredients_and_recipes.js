@@ -38,16 +38,16 @@ module.exports = {
       });
     }
 
-    preparationStepData.forEach((preparationStep) => {
+    preparationStepData.forEach((preparationStep, index, array) => {
       ingredientsPreparationStepsData.push({
-        id: uuid(),
+        id: index,
         preparationStepId: preparationStep.id,
         ingredientId: ingredientData[faker.random.number({ min: 0, max: 4 })].id,
         createdAt: new Date(),
         updatedAt: new Date(),
       });
       ingredientsPreparationStepsData.push({
-        id: uuid(),
+        id: index + array.length,
         preparationStepId: preparationStep.id,
         ingredientId: ingredientData[faker.random.number({ min: 0, max: 4 })].id,
         createdAt: new Date(),

@@ -57,7 +57,7 @@ module.exports = {
 
     for (let i = 0; i < 3; i++) {
       usersRecipes.push({
-        id: uuid(),
+        id: i,
         userId: userData[0].id,
         likedRecipeId: recipeData[5 + i].id,
         createdAt: new Date(),
@@ -67,7 +67,7 @@ module.exports = {
 
     for (let i = 0; i < 3; i++) {
       usersRecipes.push({
-        id: uuid(),
+        id: i + 3,
         userId: userData[1].id,
         likedRecipeId: recipeData[i].id,
         createdAt: new Date(),

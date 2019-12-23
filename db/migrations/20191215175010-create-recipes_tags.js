@@ -1,9 +1,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('recipes_tags', {
     id: {
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      primaryKey: true,
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
     },
     recipeId: {
       type: Sequelize.UUID,

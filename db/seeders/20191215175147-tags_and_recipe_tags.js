@@ -22,16 +22,16 @@ module.exports = {
     );
     const recipeRows = recipes[0];
 
-    tagData.forEach((tag) => {
+    tagData.forEach((tag, index, tags) => {
       tagsRecipesData.push({
-        id: uuid(),
+        id: index,
         tagId: tag.id,
         recipeId: recipeRows[faker.random.number({ min: 0, max: 9 })].id,
         createdAt: new Date(),
         updatedAt: new Date(),
       });
       tagsRecipesData.push({
-        id: uuid(),
+        id: index + tags.length,
         tagId: tag.id,
         recipeId: recipeRows[faker.random.number({ min: 0, max: 9 })].id,
         createdAt: new Date(),
