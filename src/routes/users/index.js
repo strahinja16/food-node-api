@@ -1,9 +1,10 @@
 const { Router } = require('express');
+const middleware = require('../../middleware');
 const { User, Recipe } = require('../../models');
 
 const router = Router();
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', middleware('auth'), async (req, res) => {
   try {
     const { id } = req.params;
     if (!id) return res.status(400).send({ message: 'Bad request' });
